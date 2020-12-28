@@ -1,8 +1,10 @@
+// Esta clase controller se encarga de ordenar la info que viene desde la api de mercadopago
 class PaymentController {
   constructor(paymentService) {
     this.paymentService = paymentService;
   }
 
+  // Esta Funcion 
   async getMercadoPagoLink(req, res) {
     const { name, price, unit, img } = req.query;
 
@@ -35,7 +37,7 @@ class PaymentController {
         res.end("ok");
       });
     }
-    return res.status(201);
+    return res.status(200);
   }
 }
 

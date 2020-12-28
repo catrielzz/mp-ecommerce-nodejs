@@ -6,7 +6,7 @@ class PaymentService {
       prod: {},
       test: {
         access_token:
-          "TEST-5963715425919820-122415-ba577d17d4d33416476083eb20f73101-140362280"
+          "APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398"
       }
     };
     this.mercadoPagoUrl = "https://api.mercadopago.com/checkout";
@@ -20,7 +20,7 @@ class PaymentService {
         id: "1234",
         title: name,
         description: "Dispositivo movil de Tienda e-commerce",
-        picture_url: "https://courseit.com.ar/static/logo.png",
+        picture_url: "https://laverdadnoticias.com/__export/1601988611897/sites/laverdad/img/2020/10/06/naruto_fan_art_muestra_a_neji_hyuga_en_una_increixble_versioxn_realista_.png_1217713606.png",
         category_id: "1234",
         quantity: parseInt(unit),
         currency_id: "ARS",
@@ -30,7 +30,7 @@ class PaymentService {
 
     const preferences = {
       items,
-      external_reference: "nicolascastrogarcia@gmail.com",
+      external_reference: "estradayoel@gmail.com",
       payer: {
         name: "Lalo",
         surname: "Landa",
@@ -53,14 +53,14 @@ class PaymentService {
         ],
         excluded_payment_types: [{ id: "atm" }],
         installments: 6,
-        default_installments: 6
+        default_installments: 1
       },
       back_urls: {
-        success: "https://mercadopago-checkout.herokuapp.com/success",
-        pending: "https://mercadopago-checkout.herokuapp.com/pending",
-        failure: "https://mercadopago-checkout.herokuapp.com/error"
+        success: "https://catrielzz-mp-commerce-nodejs.herokuapp.com/success",
+        pending: "https://catrielzz-mp-commerce-nodejs.herokuapp.com/pending",
+        failure: "https://catrielzz-mp-commerce-nodejs.herokuapp.com/error"
       },
-      notification_url: "https://mercadopago-checkout.herokuapp.com/webhook",
+      notification_url: "https://catrielzz-mp-commerce-nodejs.herokuapp.com/webhook",
       auto_return: "approved"
     };
 
