@@ -10,6 +10,7 @@ const PaymentInstance = new PaymentController(new PaymentService());
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
+// Creamos las rutas a donde va redirigir la app dependiendo el status de la compra
 app.get("/", (req, res) => {
   res.render("home");
 });

@@ -1,8 +1,20 @@
-Para este ejercicio decidí afrontarlo con distintas fuentes, separé la logica 
+Para este ejercicio decidí afrontarlo con distintas fuentes, después de investigar decidí usar la api de mercado pago ya que tomé como referencia el ejercicio de preventa para ahondar más en el producto.
 
+Flujo:
 
+1- Cliente interactua con checkout y realiza el submit
 
+2- Se genera la preferencia con los datos que se proporciona + los montos a cobrar
 
+3- Capturo payment_id random para usarlo despues en las referencias
+
+4- Cliente termina el pago en MP
+
+5- El cliente puede elegir 2 opciones, pago con tarjeta/pago efectivo
+
+5.1- Pago con tarjeta: me llega por get con back_url success
+
+5.2- Pago con efectivo: me llega por get con back_url pending
 
 **Requerimiento:**
 **Medios de Pago**

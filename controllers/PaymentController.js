@@ -4,7 +4,8 @@ class PaymentController {
     this.paymentService = paymentService;
   }
 
-  // Esta Funcion 
+  // Esta función obtiene los datos del producto que queremos vender, llamando a createPaymentMercadoPago
+  // Es una función asincrónica porque debe consultar al service
   async getMercadoPagoLink(req, res) {
     const { name, price, unit, img } = req.query;
 
@@ -16,7 +17,7 @@ class PaymentController {
         img
       );
       console.log(checkout, "checkout response");
-      return res.redirect(checkout.init_point); // cambiar esto
+      return res.redirect(checkout.init_point);
     } catch (err) {
       res.redirect("/");
       return res.status(500).json({
@@ -26,6 +27,8 @@ class PaymentController {
     }
   }
 
+  // Webhook debe devolver 201 o 200 para que mercadopago nos pueda enviar las notificaciones de los pagos
+  // Creamos la variable body como elemento para modificarse mientras se recibe la info, como vuelve en chunks tenemos que pasarla a string para que sea legible
   async webhook(req, res) {
     if (req.method === "POST") {
       let body = "";
@@ -37,7 +40,7 @@ class PaymentController {
         res.end("ok");
       });
     }
-    return res.status(200);
+    return res.status(201).end;
   }
 }
 
