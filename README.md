@@ -14,7 +14,7 @@ Flujo:
 
 5.1- Pago con tarjeta: me llega por get con back_url success
 
-5.2- Pago con efectivo: me llega por get con back_url pending
+5.2- Pago con efectivo: me llega por get con back_url 
 
 **Requerimiento:**
 **Medios de Pago**
@@ -36,3 +36,7 @@ payment_methods: {
         default_installments: 1
       }
 ```
+
+**Caso Preventa**
+
+Intentaría ir por el lado de que checkout api permite mas flexibilidad a la hora de generar la ventana de pago, da mejor aprobación, cobertura de contracargos y medios de pago(todos o solo los que elija el cliente). Ya que el checkout pro es una solucion generalizada para la mayoría de los comercios, Checkout API es una solucion mucho mas robusta para empresas grandes con necesidades especificas.
